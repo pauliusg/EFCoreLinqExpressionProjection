@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace LinqExpressionProjection.Test.Model
+namespace EFCoreLinqExpressionProjection.Test.Model
 {
     public class Project
     {

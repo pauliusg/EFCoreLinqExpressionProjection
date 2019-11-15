@@ -1,7 +1,7 @@
 
-# EFLinqExpressionProjecton
+# EFCoreLinqExpressionProjection
 
-This project enables the reuse of LINQ expression logic in projections. This is a fork of [LINQ Expression Projection](https://github.com/AsherBarak/LINQ-Expression-Projection) but with support for async queries from Entity Framework 6 and later.
+This project enables the reuse of LINQ expression logic in projections. This is a fork of [EFLinqExpressionProjection](https://github.com/weiran/EFLinqExpressionProjection) but with support for queries from Entity Framework Core.
 
 ## Usage
 
@@ -29,12 +29,4 @@ var projects = await context.Projects
 
 ## Installation
 
-Find this on NuGet: https://www.nuget.org/packages/EFLinqExpressionProjection
-
----
-<p align="center">
-  <b>By Weiran Zhang</b><br>
-  <a href="https://weiran.co">Website</a> |
-  <a href="https://twitter.com/weiran">Twitter</a> |
-  <a href="https://github.com/weiran">GitHub</a>
-</p>
+Find this on NuGet: https://www.nuget.org/packages/EFCoreLinqExpressionProjection

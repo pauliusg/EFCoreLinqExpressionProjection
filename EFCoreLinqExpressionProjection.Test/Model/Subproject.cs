@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 
 // ReSharper disable InconsistentNaming
 
-namespace LinqExpressionProjection.Test.Model
+namespace EFCoreLinqExpressionProjection.Test.Model
 {
     public class Subproject
     {
@@ -11,7 +11,7 @@ namespace LinqExpressionProjection.Test.Model
 
         public Project Project { get; set; }
 
-        public int Area { get; set; }
+        public int? Area { get; set; }
 
         public static readonly Expression<Func<Subproject, string>> StaticFieldOnType_BasicExpression = subProject => "StaticFieldOnType_BasicExpression - Area: " + subProject.Area;
     }

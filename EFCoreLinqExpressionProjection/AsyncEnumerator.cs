@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
-using System.Data.Entity.Infrastructure;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace LinqExpressionProjection
+namespace EFCoreLinqExpressionProjection
 {
-    internal class AsyncEnumerator<T> : IDbAsyncEnumerator<T>
+    internal class AsyncEnumerator<T> : IAsyncEnumerator<T>
     {
         private readonly IEnumerator<T> _inner;
 
@@ -19,19 +18,11 @@ namespace LinqExpressionProjection
             _inner.Dispose();
         }
 
-        public Task<bool> MoveNextAsync(CancellationToken cancellationToken)
+        public Task<bool> MoveNext(CancellationToken cancellationToken)
         {
             return Task.FromResult(_inner.MoveNext());
         }
 
-        public T Current
-        {
-            get { return _inner.Current; }
-        }
-
-        object IDbAsyncEnumerator.Current
-        {
-            get { return Current; }
-        }
+        public T Current => _inner.Current;
     }
 }

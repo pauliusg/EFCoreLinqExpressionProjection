@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace LinqExpressionProjection
+namespace EFCoreLinqExpressionProjection
 {
     /// <summary>
     /// Custom expresssion visitor for ExpandableQuery. This expands calls to Expression.Compile() and

@@ -1,4 +1,4 @@
-﻿namespace LinqExpressionProjection.Test.Model
+﻿namespace EFCoreLinqExpressionProjection.Test.Model
 {
     public class User
     {

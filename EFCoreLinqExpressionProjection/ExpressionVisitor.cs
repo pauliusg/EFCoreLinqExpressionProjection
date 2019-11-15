@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Linq.Expressions;
-using System.Reflection;
-using System.Runtime.CompilerServices;
 
-namespace LinqExpressionProjection
+namespace EFCoreLinqExpressionProjection
 {
 	/// <summary>
 	/// This comes from Matt Warren's sample:

@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 // ReSharper disable UnusedParameter.Global
 
-namespace LinqExpressionProjection
+namespace EFCoreLinqExpressionProjection
 {
     public static class Extensions
     {

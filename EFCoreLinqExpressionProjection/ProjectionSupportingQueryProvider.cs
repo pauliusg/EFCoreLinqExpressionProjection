@@ -1,12 +1,13 @@
-﻿using System.Data.Entity.Infrastructure;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 
-namespace LinqExpressionProjection
+namespace EFCoreLinqExpressionProjection
 {
-    internal class ProjectionSupportingQueryProvider<T> : IQueryProvider, IDbAsyncQueryProvider
+    internal class ProjectionSupportingQueryProvider<T> : IQueryProvider, IAsyncQueryProvider
     {
         private readonly ProjectionSupportingQuery<T> _query;
 
@@ -37,15 +38,17 @@ namespace LinqExpressionProjection
         {
             return _query.InnerQuery.Provider.Execute<TResult>(expression.ExpandExpressionsForProjection());
         }
-
-        Task<object> IDbAsyncQueryProvider.ExecuteAsync(Expression expression, CancellationToken cancellationToken)
+        
+        public IAsyncEnumerable<TResult> ExecuteAsync<TResult>(Expression expression)
         {
-            return Task.FromResult(_query.InnerQuery.Provider.Execute(expression.ExpandExpressionsForProjection()));
+            var result = new ProjectionSupportingQuery<TResult>(_query.InnerQuery.Provider.CreateQuery<TResult>(expression.ExpandExpressionsForProjection()));
+            return result;
         }
 
-        Task<TResult> IDbAsyncQueryProvider.ExecuteAsync<TResult>(Expression expression, CancellationToken cancellationToken)
+        public Task<TResult> ExecuteAsync<TResult>(Expression expression, CancellationToken cancellationToken)
         {
-            return Task.FromResult(_query.InnerQuery.Provider.Execute<TResult>(expression.ExpandExpressionsForProjection()));
+            var result = _query.InnerQuery.Provider.Execute<TResult>(expression.ExpandExpressionsForProjection());
+            return Task.FromResult(result);
         }
     }
 }
