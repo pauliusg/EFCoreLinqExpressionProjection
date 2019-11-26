@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>EFCoreLinqExpressionProjection</RootNamespace>
     <Authors>Paulius Grabauskas</Authors>
     <Copyright>Copyright 2019</Copyright>
@@ -9,17 +9,16 @@
     <PackageLicenseUrl>https://raw.githubusercontent.com/pauliusg/EFCoreLinqExpressionProjection/master/LICENSE</PackageLicenseUrl>
     <Owners>Paulius Grabauskas</Owners>
     <PackageProjectUrl>https://github.com/pauliusg/EFCoreLinqExpressionProjection</PackageProjectUrl>
-    <PackageReleaseNotes>Added support for EF Core v2.2.6</PackageReleaseNotes>
+    <PackageReleaseNotes>Added support for EF Core &gt;= 2.1.0 &amp;&amp; &lt; 3.0.0</PackageReleaseNotes>
     <PackageTags>Linq EF Core EFCore EntityFrameworkCore</PackageTags>
     <Title>LINQ Expression Projection (supports Entity Framework Core)</Title>
     <Description>With this little helper you can project in your LINQ Select() using expressions not written inside the LINQ query. This opens the door for expression reuse.
 This is a fork of the EFLinqExpressionProjecton project with added support for EF Core.
     </Description>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="[2.1.0,3.0.0)" />
   </ItemGroup>
-  
 </Project>

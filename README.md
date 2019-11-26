@@ -14,7 +14,7 @@ usages of `Project()` do not have to explicitly specify them.
 Example:
 
 ```cs
-Expression<Func<Project, double>> averageEffectiveAreaExpression =
+Expression<Func<Project, double?>> averageEffectiveAreaExpression =
   proj => proj.Subprojects.Average(sp => sp.Area);
 
 var projects = await context.Projects
